@@ -17,16 +17,15 @@ startButton.disabled = false;
 });
 
 const startButton = document.querySelector("[data-start]");
-const daysElement = document.querySelector("[data-days]");
-const hoursElement = document.querySelector("[data-hours]");
-const minutesElement = document.querySelector("[data-minutes]");
-const secondsElement = document.querySelector("[data-seconds]");
+const elements = document.querySelectorAll(".value");
+const [daysElement, hoursElement, minutesElement, secondsElement] = elements;
 
 let countdownIntervalId = null;
 
 startButton.addEventListener("click", () => {
 clearInterval(countdownIntervalId);
 const selectedDate = datePicker.selectedDates[0];
+
 countdownIntervalId = setInterval(() => {
 const now = new Date().getTime();
 const timeLeft = selectedDate.getTime() - now;
