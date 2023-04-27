@@ -9,7 +9,7 @@ form.addEventListener('submit', (event) => {
   const step = parseInt(form.elements.step.value);
   const amount = parseInt(form.elements.amount.value);
 
-  for (let i = 0; i < amount; i++) {
+  for (let i = 0; i < amount; i += 1) {
     const position = i + 1;
     const currentDelay = delay + i * step;
 
